@@ -15,7 +15,11 @@ int play(Player players[2], Card cards[])
 	int wins_per_player[2] = { 0, 0 }; // an array to keep track of each player's number of wins.
 	for (int round = 1; round <= 10; round++) // the rubric says to play 10 rounds per game.
 	{
-		wins_per_player[start_new_round(players, cards)]++; // start a new round of five-card-draw, and increment the resulting winning player's number of wins.
+		int round_result = start_new_round(players, cards);
+		if (round_result == 0 || round_result == 1)
+		{
+			wins_per_player[round_result]++; // start a new round of five-card-draw, and increment the resulting winning player's number of wins.
+		}
 		players[0].wins = wins_per_player[0];
 		players[1].wins = wins_per_player[1];
 	}
