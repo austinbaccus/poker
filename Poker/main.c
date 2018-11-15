@@ -44,7 +44,7 @@ bool play_again()
 	printf("\n\twould you like to play again? enter 'y' if yes, 'n' if no.\n\t");
 	char answer = 'n';
 	scanf(" %c", &answer);
-	return true;
+	return (answer == 'y');
 }
 void print_game_over_message(int winner)
 {
